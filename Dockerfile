@@ -12,4 +12,4 @@ COPY final_random_forest_model.pkl .
 
 EXPOSE 7860
 
-CMD ["gunicorn", "--bind", "0.0.0.0:7860", "app:app"]
+CMD gunicorn --bind 0.0.0.0:${PORT:-7860} app:app
